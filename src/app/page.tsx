@@ -1,95 +1,55 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '../styles/page.module.scss'
+import getButtons from '@/services'
+import AverageButton from '@/average-component/button';
 
-export default function Home() {
+export default async function Page() {
+  const buttons = await getButtons();
+
+  if (!buttons) return (
+    <div>Loading...</div>
+  )
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      <h1 className={styles.hero}>
+        This is just an Average Design System
+      </h1>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <h2 className={styles['component-title']}>
+        Button
+      </h2>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <div className={styles['example-grid']}>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        {buttons.map((button, index) => (
+          <div
+            key={index}
+            className={styles['example-container']}>
+            <p>
+              {button.get('System') as string} - {button.get('Type') as string} - {button.get('Size') as string}
+            </p>
+            <div 
+              className={styles['example']}>
+              <AverageButton
+                height={button.get('Height') as number}
+                padding={button.get('Padding') as string}
+                borderRadius={button.get('Border Radius') as number}
+                fontSize={button.get('Font Size') as number}
+                lineHeight={button.get('Line Height') as number}
+                borderWidth={button.get('Border Width') as number}
+                bgColor={button.get('Background Color') as string}
+                textColor={button.get('Text Color') as string}
+                borderColor={button.get('Border Color') as string}
+                />
+            </div>
+          </div>
+        ))}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
   )
 }
+
+// export default function Page() {
+//   return (<div>Page</div>)
+// }
