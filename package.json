@@ -1,34 +1,24 @@
 {
-  "name": "nextjs-starter-prismic-minimal-ts",
+  "name": "folder",
   "version": "0.1.0",
   "private": true,
-  "license": "Apache-2.0",
-  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
-    "next:dev": "next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "slicemachine": "start-slicemachine",
-    "format": "prettier --write ."
+    "lint": "next lint"
   },
   "dependencies": {
-    "@prismicio/client": "^7.1.1",
-    "@prismicio/next": "^1.3.4",
-    "@prismicio/react": "^2.7.1",
-    "@types/node": "^20.4.9",
-    "@types/react": "^18.2.19",
-    "@types/react-dom": "^18.2.7",
-    "next": "^13.4.13",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.1.6"
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.0.4"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "^0.3.10",
-    "concurrently": "^8.2.0",
-    "eslint-config-next": "^13.4.13",
-    "slice-machine-ui": "^1.8.0"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4"
   }
 }
