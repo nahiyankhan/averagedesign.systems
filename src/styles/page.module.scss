@@ -1,0 +1,63 @@
+.main {
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.hero {
+  font-size: 12rem;
+  font-weight: 700;
+  letter-spacing: -0.2rem;
+  margin-bottom: 12rem;
+}
+
+.component-title {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+  margin-bottom: 4rem;
+}
+
+.example-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #555555;
+  border-radius: 8px;
+  margin: 1rem;
+
+  p {
+    color: black;
+    margin-bottom: 2rem;
+  }
+
+  .example {
+    display: flex;
+  }
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  
+}
+
+@media (prefers-color-scheme: dark) {
+  
+}
