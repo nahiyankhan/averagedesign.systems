@@ -11,7 +11,8 @@ export default async function ButtonPage() {
     buttons.forEach((button) => {
       buttonData.push({
         height: button.get('Height') as number,
-        padding: button.get('Padding') as string,
+        paddingV: button.get('Padding V') as number,
+        paddingH: button.get('Padding H') as number,
         borderRadius: button.get('Border Radius') as number,
         fontSize: button.get('Font Size') as number,
         lineHeight: button.get('Line Height') as number,
