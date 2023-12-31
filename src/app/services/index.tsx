@@ -1,5 +1,5 @@
 import Airtable, { FieldSet, Records } from 'airtable';
-import { ButtonData } from '@/types';
+import { ButtonData } from '@/app/types';
 
 const base = new Airtable({apiKey: process.env.AIRTABLE_PAT}).base('appooQfFJY3DuNvKe');
 let buttons: null | Records<FieldSet> = null;

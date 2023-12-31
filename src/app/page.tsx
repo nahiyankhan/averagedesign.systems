@@ -1,25 +1,23 @@
-import styles from '../styles/page.module.scss'
-import getButtons from '@/services'
-import AverageButton from '@/average-component/button';
+import Link from 'next/link';
+import styles from './styles/page.module.scss'
+import AverageButton from '@/app/average-component/button';
 
 export default async function Page() {
-  const buttons = await getButtons();
-
-  if (!buttons) return (
-    <div>Loading...</div>
-  )
-
   return (
     <main className={styles.main}>
       <h1 className={styles.hero}>
-        This is just an Average Design System
+        this is an average design system
       </h1>
 
-      <h2 className={styles['component-title']}>
-        Button
-      </h2>
+      <Link href="/component/button">
+        <div className={styles.card}>
+          <h2 className={styles['component-title']}>
+            Button
+          </h2>
+        </div>
+      </Link>
 
-      <div className={styles['example-grid']}>
+      {/* <div className={styles['example-grid']}>
 
         {buttons.map((button, index) => (
           <div
@@ -45,7 +43,7 @@ export default async function Page() {
           </div>
         ))}
 
-      </div>
+      </div> */}
     </main>
   )
 }
